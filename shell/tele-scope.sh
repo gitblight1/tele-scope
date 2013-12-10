@@ -228,9 +228,9 @@ options:
 	fi
 
 	if [ -n "$@" ]; then # specific files
-		git add $@
+		git add -p $@
 	else # no files supplied, add everything
-		git add .
+		git add -p .
 	fi
 
 	if ! git commit $authflag "${authorstring}" $msgflag "${message}"
