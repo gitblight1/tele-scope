@@ -233,7 +233,7 @@ options:
 		git add -p .
 	fi
 
-	if ! git commit $authflag "${authorstring}" $msgflag "${message}"
+	if ! git commit $authflag ${authflag+"${authorstring}"} $msgflag ${msgflag+"${message}"}
 	then
 		echo "Commit failed or was aborted. Exiting."
 		return $COMMITERROR
